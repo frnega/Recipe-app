@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  get 'public_recipes/index'
+  get 'general_shopping_list/index'
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-  get 'home/index'
-  root "home#index"
+  resources :foods, only: [:index, :new, :create, :destroy]
+  resources :recipes, except: [:update] do
+    member do
+      get 'recipe_status', to: 'recipes#recipe_status'
+      post "ingredients/:ingredient_id", to: "recipes#new_ingredients", as: "new_ingredient"
+    end
+  end
+  resources :recipe_foods, only: [:edit, :update, :destroy]
+  delete '/recipe_foods/:id', to: 'recipe_foods#destroy', as: 'destroy_recipe_food'
+  get '/public_recipes', to: 'public_recipes#index'
+  get '/general_shopping_list', to: 'general_shopping_list#index'
+  root "foods#index"
 end
