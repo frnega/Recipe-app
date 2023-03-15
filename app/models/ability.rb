@@ -7,7 +7,7 @@ class Ability
     can %i[read create], Recipe
     return unless user.present?
 
-    can :destroy, Food, user: user
+    can(:destroy, Food, user:)
     can :manage, Recipe, user:
   end
 end
