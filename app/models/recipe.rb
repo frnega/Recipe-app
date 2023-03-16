@@ -15,7 +15,7 @@ class Recipe < ApplicationRecord
     @total_price = 0
     @food_items = recipe_foods.group(:food_id).sum(:quantity)
     recipe_foods.each do |recipe_food|
-      @total_price += (recipe_food.food.price * recipe_food.quantity)
+      @total_price += (recipe_food.food.unit_price * recipe_food.quantity)
     end
     @total_price
   end
