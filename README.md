@@ -30,7 +30,7 @@
 </details>
 <details>
 <summary>Login-page</summary>
-<img src='./image/login-page.png' width="500" />
+<img src='./image/login_page.png' width="500" />
 </details>
 <details>
 <summary>Create new recipe page</summary>
