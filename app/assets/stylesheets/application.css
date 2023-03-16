@@ -5,7 +5,7 @@
 
 .recipe:active,
 .recipe:hover {
-  color: white;
+  color: black;
 }
 
 .recipe-details-cont {
