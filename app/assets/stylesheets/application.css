@@ -3,6 +3,11 @@
   color: white;
 }
 
+.recipe {
+  text-decoration: none;
+  color: white;
+}
+
 .recipe:active,
 .recipe:hover {
   color: white;
