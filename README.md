@@ -24,6 +24,34 @@
 # 📖 [Recipe App] <a name="about-project"></a>
 
 > This is a Recipe app project .
+<details>
+<summary>Home-page</summary>
+<img src='./image/home-page.png' width="500" />
+</details>
+<details>
+<summary>Login-page</summary>
+<img src='./image/login-page.png' width="500" />
+</details>
+<details>
+<summary>Create new recipe page</summary>
+<img src='./image/new_recipe.png' width="500" />
+</details>
+<details>
+<summary> Create new food page</summary>
+<img src='./image/newfood.png' width="500" />
+</details>
+<details>
+<summary>Public recipe page</summary>
+<img src='./image/public_recipe .png' width="500" />
+</details>
+<details>
+<summary>Recipe page</summary>
+<img src='./image/recipe_page.png' width="500" />
+</details>
+<details>
+<summary>Shopping list page</summary>
+<img src='./image/shoping_list.png' width="500" />
+</details>
 
 ## 🛠 Built With <a name="built-with"></a>
 
