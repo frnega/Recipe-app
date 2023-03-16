@@ -57,7 +57,6 @@ RSpec.configure do |config|
   #   # the `--only-failures` and `--next-failure` CLI options. We recommend
   #   # you configure your source control system to ignore this file.
   #   config.example_status_persistence_file_path = "spec/examples.txt"
-  #
   #   # Limits the available syntax to the non-monkey patched syntax that is
   #   # recommended. For more details, see:
   #   # https://relishapp.com/rspec/rspec-core/docs/configuration/zero-monkey-patching-mode
@@ -75,6 +74,10 @@ RSpec.configure do |config|
   #     # unless a formatter has already been configured
   #     # (e.g. via a command-line flag).
   #     config.default_formatter = "doc"
+  #
+  #     # Use the documentation formatter for detailed output,
+  #     # unless a formatter has already been configured
+  #     # (e.g. via a command-line flag).
   #   end
   #
   #   # Print the 10 slowest examples and example groups at the

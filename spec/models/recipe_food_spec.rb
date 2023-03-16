@@ -1,31 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe RecipeFood, type: :model do
-  subject do
-    @user = User.create(name: 'Someone')
-    @food = Food.create(name: 'Food', measurement_unit: 'grams', unit_price: 15.5, user_id: @user.id)
-    @recipe = Recipe.create(name: 'Recipe', preparation_time: 15, cooking_time: 30, description: 'description',
-                            public: true, user_id: @user.id)
-    @recipe_food = RecipeFood.create(quantity: '15g', food_id: @food.id, recipe_id: @recipe.id)
-  end
 
-  before { subject.save }
+  let(:user) { create(:user) }
+  let(:recipe) { create(:recipe, user_id: user.id) }
+  let(:food) { create(:food, user_id: user.id) }
+  let(:recipe_food) { create(:recipe_food, food_id: food.id, recipe_id: recipe.id) }
 
-  it 'quantity should be present' do
-    subject.quantity = nil
-    expect(subject).to_not be_valid
-  end
-
-  it 'quantity should not be empty' do
-    subject.quantity = ' '
-    expect(subject).to_not be_valid
-  end
-
-  it 'quantity should have valid value' do
-    expect(subject.quantity).to eql 15
-  end
-
-  it 'quantity should be an integer' do
-    expect(subject.quantity).to be_a(Integer)
+  describe 'Attributes' do
+    it { should validate_presence_of(:quantity) }
+    it 'quantity must be integer' do
+      expect(recipe_food.quantity).to be_kind_of(Integer)
+    end
   end
 end
